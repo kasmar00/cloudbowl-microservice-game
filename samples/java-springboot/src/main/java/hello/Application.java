@@ -66,6 +66,9 @@ public class Application {
     int i = new Random().nextInt(3);
 
     PlayerState me = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
+    if (me.wasHit) {
+        return "F";
+    }
     for (Entry<String,PlayerState> entry : arenaUpdate.arena.state.entrySet()) {
         if (entry.getKey().equals(arenaUpdate._links.self.href)){
 
